@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
 import { data, images } from '../../constants';
 import './Header.scss';
+import { TypeAnimation } from 'react-type-animation';
 
 const scaleVariants = {
   whileInView: {
@@ -27,17 +28,44 @@ const Header = () => (
         <div className="badge-cmp app__flex">
           <span>👋</span>
           <div style={{ marginLeft: 20 }}>
+
             <p className="p-text">Hello, I am</p>
-            <h1 className="head-text">{data.Name}</h1>
+            <TypeAnimation
+      sequence={[
+        data.Name, // Types 'One'
+        2000,
+        '',
+        1000 // Waits 1s
+       
+      ]}
+      wrapper="h1"
+      cursor={true}
+      repeat={Infinity}
+      className={"head-text"}
+    />
+            {/* <h1 className="head-text">{data.Name}</h1> */}
           </div>
         </div>
 
         <div className="tag-cmp app__flex">
-          {
-            data.whoami.map((w)=>{
-              return  <p className="p-text">{w}</p>
-            })
-          }
+          
+                 <TypeAnimation
+                 sequence={[
+                   data.whoami[0], // Types 'One'
+                   2000,
+                   data.whoami[1],
+                   2000,
+                   data.whoami[2],
+                   2000,
+                    // Waits 1s
+                  
+                 ]}
+                 wrapper="p"
+                 cursor={true}
+                 repeat={Infinity}
+                 className={"p-text"}
+               />
+          
          
         </div>
       </div>

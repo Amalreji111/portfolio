@@ -3,7 +3,9 @@ export const data={
     Heading:'AMAL',
     whoami:[
         "Mern Stack Developer",
-        "Freelancer"
+        "Programmer",
+        "Tech  lover",
+        "Freelancer",
     ],
     email:'amalreji111@gmail.com',
     phone:'+917034103723',
